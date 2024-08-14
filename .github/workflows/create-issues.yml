@@ -1,0 +1,30 @@
+name: Batch Create Issues
+
+on:
+  workflow_dispatch: # 手动触发工作流
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Issue 1
+        uses: JasonEtco/create-an-issue@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Issue 1"
+          body: "这是第一个 Issue 的描述"
+
+      - name: Create Issue 2
+        uses: JasonEtco/create-an-issue@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Issue 2"
+          body: "这是第二个 Issue 的描述"
+
+      - name: Create Issue 3
+        uses: JasonEtco/create-an-issue@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: "Issue 3"
+          body: "这是第三个 Issue 的描述"
